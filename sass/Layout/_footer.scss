@@ -1,0 +1,28 @@
+.basDePage {
+	background-color: rgb(31, 29, 29);
+	margin-top: 0px;
+}
+
+.nav {
+	font-family: "Roboto", sans-serif;
+	color: white;
+	.nav_link1 {
+		font-family: "Shrikhand", cursive;
+		list-style: none;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.nav_link {
+		list-style: none;
+		padding-bottom: 5px;
+		font-size: medium;
+	}
+	.nav_link i {
+		margin-right: 5px;
+		width: 20px;
+	}
+	.nav_link a {
+		text-decoration: none;
+		color: white;
+	}
+}

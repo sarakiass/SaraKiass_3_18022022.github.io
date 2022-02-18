@@ -1,0 +1,925 @@
+@import "./Layout/header";
+@import "./Layout/footer";
+@import "./Utils/variables";
+@import "./base/norme";
+@import "./Layout/bloc";
+
+/*Pour le Mobile */
+
+* {
+	box-sizing: border-box;
+}
+
+
+/* box-sizing est appliqué à tous les éléments */
+
+.box {
+	box-sizing: border-box;
+	/* Opera/IE 8+ */
+	-moz-box-sizing: border-box;
+	/* Firefox, autres Gecko */
+	-webkit-box-sizing: border-box;
+	/* Safari/Chrome, autres WebKit */
+}
+
+@media (max-width: 767px) {
+	.body {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.search {
+		background-color: #eaeaea;
+		height: 40px;
+		text-align: center;
+	}
+	.search input {
+		padding-top: 9px;
+		background-color: #eaeaea;
+		border: none;
+		color: black;
+		text-align: center;
+		margin-right: 30px;
+		margin-left: 30px;
+		padding-left: 30px;
+		font-weight: bold;
+		@include policetexte;
+	}
+	.search i {
+		position: relative;
+		left: 80px;
+	}
+	.cta {
+		padding: 30px;
+		background-color: #f7f7f7;
+		height: 220px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.first {
+		@include policetexte;
+		font-weight: bold;
+		text-align: center;
+		font-size: x-large;
+		margin-bottom: 10px;
+	}
+	.second {
+		@include policetexte;
+		text-align: center;
+		font-size: medium;
+		margin-bottom: 10px;
+		color: gray;
+	}
+	.boutton {
+		display: flex;
+		justify-content: center;
+		border-radius: 50px 50px 50px 50px;
+		border: none;
+		height: 40px;
+		@include policetexte;
+		margin: auto;
+		background: linear-gradient(#ff79da, #9356dc);
+		color: white;
+		cursor: pointer;
+	}
+	.fonction {
+		display: flex;
+		flex-direction: column;
+		margin-right: 5px;
+	}
+	.premierb {
+		background-color: #f7f7f7;
+		border-radius: 20px;
+		height: 60px;
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding: 20px;
+		margin-top: 10px;
+		@include policetexte;
+		font-size: small;
+		font-weight: bold;
+	}
+	.premierb:hover {
+		background-color: (lighten(#9356dc, 30%));
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+	}
+	.badge {
+		padding: 3px 3px 3px;
+		height: 21px;
+		width: 21px;
+		border-radius: 50%;
+		text-align: center;
+		background: #9356dc;
+		color: #fefefe;
+		position: relative;
+		font-size: medium;
+		top: 16px;
+		left: 13px;
+	}
+	.premierb i {
+		color: gray;
+	}
+	.premierb:hover {
+		background-color: (lighten(#9356dc, 30%));
+		cursor: pointer;
+	}
+	.fonction span {
+		font-size: small;
+		margin-top: 10px;
+		margin-left: 30px;
+	}
+	header i {
+		position: relative;
+		right: 50px;
+		font-size: medium;
+	}
+	.Secondbloc span {
+		@include policelogo;
+	}
+	.titreformatte {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.restaurant {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	.nom {
+		margin-top: 15px;
+		padding-left: 35px;
+		padding-top: 10px;
+		@include policetexte;
+		font-weight: bold;
+		font-size: large;
+	}
+	.capture img {
+		border-radius: 0px 0px 0px 0px;
+	}
+	.firstbloc {
+		background-color: #f7f7f7;
+		margin: auto;
+	}
+	.menu {
+		font-size: x-large;
+		margin: auto;
+	}
+	.menuTitle {
+		font-size: xx-small;
+	}
+	.Secondbloc {
+		border-radius: 20px 20px 0px 0px;
+		background-color: #f7f7f7;
+		font-size: x-large;
+		padding: 10px;
+		bottom: 40px;
+		position: relative;
+	}
+	.menu span {
+		@include policelogo;
+	}
+	.menu i {
+		position: relative;
+		left: 85px;
+	}
+	.elements {
+		background-color: white;
+		height: 50px;
+		border-radius: 10px 10px 10px 10px;
+		padding-left: 4px;
+		font-size: small;
+		animation: fadein 0.5s forwards;
+		animation-iteration-count: 1;
+		opacity: 0;
+		margin: auto;
+		padding: auto;
+	}
+	.button {
+		display: flex;
+		justify-content: center;
+		border-radius: 50px 50px 50px 50px;
+		border: none;
+		height: 40px;
+		margin-left: 80px;
+		@include policetexte;
+		background: linear-gradient(#ff79da, #9356dc);
+		color: white;
+		cursor: pointer;
+		margin-top: 40px;
+		text-align: center;
+	}
+	@keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@-webkit-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@for $i from 1 through 9 {
+		.elements {
+			// :nth-child(1-9)
+			&:nth-child(#{$i}) {
+				// Delay the animation. Delay increases as items loop.
+				animation-delay: $i * (0.5s);
+			}
+		}
+	}
+	.elements p {
+		padding-top: 5px;
+		font-weight: bold;
+		font-size: medium;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 2px;
+	}
+	.entree {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin: auto;
+	}
+	.titre {
+		border-bottom: solid #99e2d0 2px;
+		width: 40px;
+		padding-top: 20px;
+	}
+	.plat {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.dessert {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.elements {
+		box-shadow: 2px 2px 0px #F2F2F2;
+	}
+	.souselement {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.price {
+		font-weight: bold;
+	}
+}
+
+
+/*Pour le Desktop*/
+
+@media (min-width:992px) {
+	.body {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.search {
+		background-color: #eaeaea;
+		height: 40px;
+		text-align: center;
+	}
+	.search input {
+		padding-top: 9px;
+		background-color: #eaeaea;
+		border: none;
+		color: black;
+		text-align: center;
+		margin-right: 30px;
+		margin-left: 30px;
+		padding-left: 30px;
+		font-weight: bold;
+		@include policetexte;
+	}
+	.search i {
+		position: relative;
+		left: 80px;
+	}
+	.cta {
+		padding-top: 30px;
+		background-color: #f7f7f7;
+		height: 180px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 30px;
+	}
+	.first {
+		@include policetexte;
+		font-weight: bold;
+		text-align: center;
+		font-size: large;
+		margin-bottom: 10px;
+	}
+	.second {
+		@include policetexte;
+		text-align: center;
+		font-size: medium;
+		margin-bottom: 10px;
+		color: gray;
+	}
+	.boutton {
+		text-align: center;
+		border-radius: 50px 50px 50px 50px;
+		border: none;
+		height: 40px;
+		margin-left: 550px;
+		margin-right: auto;
+		@include policetexte;
+		padding: 10px;
+		background: linear-gradient(#ff79da, #9356dc);
+		color: white;
+		cursor: pointer;
+	}
+	.titreformatte {
+		padding-top: 20px;
+	}
+	.fonction {
+		display: flex;
+		flex-direction: row;
+		margin-right: 30px;
+	}
+	.premierb {
+		background-color: #f7f7f7;
+		border-radius: 20px;
+		height: 60px;
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding: 20px;
+		margin-top: 10px;
+		@include policetexte;
+		font-size: small;
+		font-weight: bold;
+	}
+	.premierb:hover {
+		background-color: (lighten(#9356dc, 30%));
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+	}
+	.badge {
+		padding: 3px 3px 3px 3px;
+		height: 21px;
+		width: 21px;
+		border-radius: 50%;
+		text-align: center;
+		background: #9356dc;
+		color: #fefefe;
+		position: relative;
+		font-size: medium;
+		top: 16px;
+		left: 15px;
+	}
+	.premierb i {
+		color: gray;
+	}
+	.premierb:hover {
+		background-color: (lighten(#9356dc, 30%));
+		cursor: pointer;
+	}
+	.fonction span {
+		font-size: small;
+		margin-top: 10px;
+		margin-left: 30px;
+	}
+	header i {
+		position: relative;
+		right: 50px;
+		font-size: medium;
+	}
+	.firstbloc {
+		background-color: #f7f7f7;
+		height: 100%;
+	}
+	.restaurant {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 30px;
+		background-color: #f7f7f7;
+		height: 100%;
+	}
+	.nom {
+		margin-top: 15px;
+		padding-left: 35px;
+		padding-top: 10px;
+		@include policetexte;
+		font-weight: bold;
+		font-size: large;
+	}
+	.capture img {
+		border-radius: 0px 0px 0px 0px;
+		height: 80%;
+	}
+	.menu {
+		margin-top: 50px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		margin-left: 20px;
+		padding: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.Secondbloc {
+		font-size: x-large;
+		height: auto;
+		padding-right: 30px;
+		@include policelogo;
+		border-radius: 20px 20px 0px 0px;
+		background-color: #f0ecec;
+		position: relative;
+		bottom: 70px;
+	}
+	.Secondbloc span {
+		padding-left: 20px;
+		margin-top: 100px;
+		@include policelogo;
+	}
+	.continue {
+		width: 100px;
+		background-color: #f0ecec;
+	}
+	.Secondbloc i {
+		position: relative;
+	}
+	.elements {
+		background-color: white;
+		width: 300px;
+		height: 50px;
+		border-radius: 10px 10px 10px 10px;
+		padding-left: 4px;
+		font-size: small;
+		animation: fadein 0.5s forwards;
+		animation-iteration-count: 1;
+		opacity: 0;
+	}
+	@keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@-webkit-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@for $i from 1 through 9 {
+		.elements {
+			// :nth-child(1-9)
+			&:nth-child(#{$i}) {
+				// Delay the animation. Delay increases as items loop.
+				animation-delay: $i * (0.5s);
+			}
+		}
+	}
+	.elements p {
+		padding-top: 5px;
+		font-weight: bold;
+		font-size: medium;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 2px;
+	}
+	.entree {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.titre {
+		border-bottom: solid #99e2d0 2px;
+		width: 40px;
+	}
+	.plat {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.dessert {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.souselement {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.price {
+		font-weight: bold;
+	}
+	.button {
+		display: flex;
+		justify-content: center;
+		border-radius: 50px 50px 50px 50px;
+		border: none;
+		height: 40px;
+		margin-left: 80px;
+		@include policetexte;
+		background: linear-gradient(#ff79da, #9356dc);
+		color: white;
+		cursor: pointer;
+		margin-top: 40px;
+		text-align: center;
+	}
+	.buttonperpage {
+		border-radius: 50px 50px 50px 50px;
+		border: none;
+		height: 40px;
+		margin-left: 80px;
+		@include policetexte;
+		background: linear-gradient(#ff79da, #9356dc);
+		color: white;
+		cursor: pointer;
+		margin-top: 40px;
+		text-align: center;
+	}
+}
+
+@media (min-width:768px) and (max-width:991px) {
+	.body {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.search {
+		background-color: #eaeaea;
+		height: 40px;
+		text-align: center;
+	}
+	.search input {
+		padding-top: 9px;
+		background-color: #eaeaea;
+		border: none;
+		color: black;
+		text-align: center;
+		margin-right: 30px;
+		margin-left: 30px;
+		padding-left: 30px;
+		font-weight: bold;
+		@include policetexte;
+	}
+	.search i {
+		position: relative;
+		left: 80px;
+	}
+	.cta {
+		padding-top: 30px;
+		background-color: #f7f7f7;
+		height: 180px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 30px;
+	}
+	.first {
+		@include policetexte;
+		font-weight: bold;
+		text-align: center;
+		font-size: large;
+		margin-bottom: 10px;
+	}
+	.second {
+		@include policetexte;
+		text-align: center;
+		font-size: medium;
+		margin-bottom: 10px;
+		color: gray;
+	}
+	.boutton {
+		text-align: center;
+		border-radius: 50px 50px 50px 50px;
+		border: none;
+		height: 40px;
+		margin-left: 550px;
+		margin-right: auto;
+		@include policetexte;
+		padding: 10px;
+		background: linear-gradient(#ff79da, #9356dc);
+		color: white;
+		cursor: pointer;
+	}
+	.titreformatte {
+		padding-top: 20px;
+	}
+	.fonction {
+		display: flex;
+		flex-direction: column;
+		margin-right: 30px;
+	}
+	.premierb {
+		background-color: #f7f7f7;
+		border-radius: 20px;
+		height: 60px;
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		padding: 20px;
+		margin-top: 10px;
+		@include policetexte;
+		font-size: small;
+		font-weight: bold;
+	}
+	.premierb:hover {
+		background-color: (lighten(#9356dc, 30%));
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+	}
+	.badge {
+		padding: 3px 3px 3px 3px;
+		height: 21px;
+		width: 21px;
+		border-radius: 50%;
+		text-align: center;
+		background: #9356dc;
+		color: #fefefe;
+		position: relative;
+		font-size: medium;
+		top: 16px;
+		left: 200px;
+	}
+	.premierb i {
+		color: gray;
+	}
+	.premierb:hover {
+		background-color: (lighten(#9356dc, 30%));
+		cursor: pointer;
+	}
+	.fonction span {
+		font-size: small;
+		margin-top: 10px;
+		margin-left: 30px;
+	}
+	header i {
+		position: relative;
+		right: 50px;
+		font-size: medium;
+	}
+	.firstbloc {
+		background-color: #f7f7f7;
+		height: 100%;
+	}
+	.restaurant {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 30px;
+		background-color: #f7f7f7;
+		height: 100%;
+	}
+	.nom {
+		margin-top: 15px;
+		padding-left: 35px;
+		padding-top: 10px;
+		@include policetexte;
+		font-weight: bold;
+		font-size: large;
+	}
+	.capture img {
+		border-radius: 0px 0px 0px 0px;
+		height: 80%;
+	}
+	.menu {
+		margin-top: 50px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		margin-left: 20px;
+		padding: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.Secondbloc {
+		font-size: x-large;
+		height: auto;
+		padding-right: 30px;
+		@include policelogo;
+		border-radius: 20px 20px 0px 0px;
+		background-color: #f0ecec;
+		position: relative;
+		bottom: 70px;
+	}
+	.Secondbloc span {
+		padding-left: 20px;
+		margin-top: 100px;
+		@include policelogo;
+	}
+	.continue {
+		width: 100px;
+		background-color: #f0ecec;
+	}
+	.Secondbloc i {
+		position: relative;
+	}
+	.elements {
+		background-color: white;
+		width: 300px;
+		height: 50px;
+		border-radius: 10px 10px 10px 10px;
+		padding-left: 4px;
+		font-size: small;
+		animation: fadein 0.5s forwards;
+		animation-iteration-count: 1;
+		opacity: 0;
+	}
+	@keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@-webkit-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@for $i from 1 through 9 {
+		.elements {
+			// :nth-child(1-9)
+			&:nth-child(#{$i}) {
+				// Delay the animation. Delay increases as items loop.
+				animation-delay: $i * (0.5s);
+			}
+		}
+	}
+	.elements p {
+		padding-top: 5px;
+		font-weight: bold;
+		font-size: medium;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 2px;
+	}
+	.entree {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.titre {
+		border-bottom: solid #99e2d0 2px;
+		width: 40px;
+	}
+	.plat {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.dessert {
+		font-size: large;
+		padding-top: 10px;
+		@include policetexte;
+		margin-bottom: 10px;
+	}
+	.souselement {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.price {
+		font-weight: bold;
+	}
+	.button {
+		display: flex;
+		justify-content: center;
+		border-radius: 50px 50px 50px 50px;
+		border: none;
+		height: 40px;
+		margin-left: 80px;
+		@include policetexte;
+		background: linear-gradient(#ff79da, #9356dc);
+		color: white;
+		cursor: pointer;
+		margin-top: 40px;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.menu {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.menuItem.elements {
+		width: 100%;
+	}
+	.fonction {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.menuItem {
+	border-radius: 15px;
+	box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+	display: flex;
+	margin-top: 15px;
+	&:hover {
+		.checkIcon {
+			opacity: 100%;
+			transition: 0.4s ease-in-out!important;
+			transform: rotate(360deg);
+			font-size: 11px;
+		}
+	}
+	.menuInfo {
+		max-width: 100%;
+		overflow: hidden;
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		padding-right: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		.menuText {
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			white-space: nowrap;
+			justify-content: center;
+			margin-left: 10px;
+			margin-right: 10px;
+			.menuTitle {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				font-weight: bold;
+				font-size: medium;
+				margin: 0;
+			}
+		}
+	}
+}
+
+p.comment {
+	margin: 0;
+}
+
+p.menuDetails {
+	margin: 0;
+	font-size: small;
+	font-weight: 400;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.menuItem {
+	.menuSelection {
+		background: #99e2d0;
+		cursor: pointer;
+		height: auto;
+		width: 0;
+		opacity: 0;
+		border-radius: 0 15px 15px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.4s ease-in-out, width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+	}
+	&:hover {
+		.menuSelection {
+			opacity: 100%;
+			width: 3rem;
+		}
+	}
+}
